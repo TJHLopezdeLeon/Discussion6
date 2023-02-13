@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Project 1</title>
+        <link rel="stylesheet" href="Project1.css">
+        <script src="modernizr.custom.05819.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>PIZZA SHOP</h1>
+        </header>
+        <main>
+            <form>
+                <h3>Choose your toppings:</h3>
+                <input type="checkbox" id="TPep" name="Pepperoni">&nbsp;<label for="Pepperoni">Pepperoni</label><br>
+                <input type="checkbox" id="TSau" name="Sausage">&nbsp;<label for="Sausage">Sausage</label><br>
+                <input type="checkbox" id="TBell" name="Bell Pepper">&nbsp;<label for="Bell_Pepper">Bell Pepper</label><br>
+                <input type="checkbox" id="TOnion" name="Onion">&nbsp;<label for="Onion">Onion</label><br>
+                <input type="checkbox" id="TPine" name="Pineapple">&nbsp;<label for="Pineapple">Pineapple</label><br>
+                <h3>Select the Type of Crust:</h3>
+                <input type="radio" id="Thin" name="Crust">&nbsp;<label for="Thin_Crust">Thin Crust</label><br>
+                <input type="radio" id="Thick" name="Crust">&nbsp;<label for="Thick_Crust">Thick Crust</label><br>
+                <input type="radio" id="Deep" name="Crust">&nbsp;<label for="Deep_Dish">Deep Dish</label><br>
+                <h3>Payment Method:</h3>
+                <input type="radio" id="Debit_Credit" name="Payment">&nbsp;<label for="Debit_Credit">Debit/Credit Card</label><br>
+                <input type="radio" id="Zelle" name="Payment">&nbsp;<label for="Zelle">Zelle</label><br>
+                <input type="radio" id="Venmo" name="Payment">&nbsp;<label for="Venmo">Venmo</label><br><br>
+                <input type="submit" id="submit" name="Submit">&nbsp;<label for="Submit"></label><br>
+            </form>
+        </main>
+        <script>
+            function Summarize(){
+                var top = [];
+                var crust = [];
+                var pay = [];
+                //checkboxes for toppings
+                if(document.getElementById("TPep").checked === true){top.push("Pepperoni");}
+                if(document.getElementById("TSau").checked === true){top.push("Sausage");}
+                if(document.getElementById("TBell").checked === true){top.push("Bell Pepper");}
+                if(document.getElementById("TOnion").checked === true){top.push("Onion");}
+                if(document.getElementById("TPine").checked === true){top.push("Pineapple");}
+                //radio button for crust
+                if(document.getElementById("Thin").checked === true){crust.push("Thin Crust");}
+                if(document.getElementById("Thick").checked === true){crust.push("Thick Crust");}
+                if(document.getElementById("Deep").checked === true){crust.push("Chicago Style");}
+                //radio button (and form) for payment method
+                if(document.getElementById("Debit_Credit").checked === true){pay.push("Debit/Credit Card");}
+                if(document.getElementById("Zelle").checked === true){pay.push("Zelle");}
+                if(document.getElementById("Venmo").checked === true){pay.push("Venmo");}
+                //output
+                document.write("You ordered a " +crust+ " pizza with "+ top +" toppings"+"<br>"+"You will be paying by "+pay);
+            }
+            document.getElementById("submit").addEventListener("click",Summarize,false);
+        </script>
+    </body>
+</html>
